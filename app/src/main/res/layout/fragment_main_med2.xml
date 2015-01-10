@@ -1,0 +1,66 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/myDetailsTextViewName"
+        android:id="@+id/myDetailsTextviewID" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/nameTextBoxID"
+        android:hint="@string/nameTextBoxHint"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/phoneTextBoxID"
+        android:hint="@string/phoneTextBoxHint"
+        android:layout_marginBottom="25dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/emailTextBoxID"
+        android:hint="@string/emailTextBoxHint"
+        android:layout_marginBottom="25dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/addressTextBoxID"
+        android:hint="@string/addressTextBoxHint"
+        android:layout_marginBottom="25dp" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateOfBirthTextBoxID"
+        android:inputType="date"
+        android:hint="@string/dateOfBirthTextBoxHint"
+        android:layout_marginBottom="25dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/myDetailsSaveName"
+        android:id="@+id/myDetailsSaveID"
+        android:layout_marginLeft="125dp" />
+
+</LinearLayout>

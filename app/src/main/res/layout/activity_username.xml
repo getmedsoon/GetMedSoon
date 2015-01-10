@@ -1,0 +1,43 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="76dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Search"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.21" />
+
+
+    <TextView
+        android:layout_width="161dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medicine Name"
+        android:id="@+id/labelMedicineNameSearch"
+        android:layout_weight="0.1" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/TextMedicineNameSearch"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.10" />
+
+    <Button
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/buttonMedicineSearch"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.03"
+        android:layout_marginTop="50dp" />
+</LinearLayout>
