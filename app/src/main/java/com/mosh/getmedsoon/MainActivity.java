@@ -286,7 +286,7 @@ public class MainActivity extends ActionBarActivity
                 @Override
                 public void onClick(View view) {
                    /* Intent myintent = new Intent();
-                    myintent.setClassName("com.mosh.getmedsoonmodule","com.mosh.getmedsoonmodule.searchpage.SearchMedicine");
+                    myintent.setClassName("com.mosh.getmedsoonmodule","com.mosh.getmedsoonmodule.searchpage.SearchMedicineActivity");
                     startActivity(myintent);*/
 
                     if(memberPhone.getText().length() != 0 &&memberName.getText().length() != 0 &&memberEmail.getText().length() != 0 &&memberAddress.getText().length() != 0 &&memberDOB.getText().length() != 0 )
@@ -334,7 +334,7 @@ public class MainActivity extends ActionBarActivity
                 @Override
                 public void onClick(View view) {
                     Intent myintent = new Intent();
-                    myintent.setClassName("com.mosh.getmedsoonmodule","com.mosh.getmedsoonmodule.searchpage.SearchMedicine");
+                    myintent.setClassName("com.mosh.getmedsoon","com.mosh.getmedsoon.searchpage.SearchMedicineActivity");
                     startActivity(myintent);
                 }
             });

@@ -51,6 +51,9 @@
         <activity
             android:name=".SearchResultsActivity"
             android:label="@string/title_activity_search_results" />
+        <activity
+            android:name=".searchpage.SearchMedicineActivity"
+            android:label="@string/title_activity_search_Medicine" />
     </application>
 
 </manifest>

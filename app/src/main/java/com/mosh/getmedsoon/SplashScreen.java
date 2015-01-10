@@ -3,9 +3,7 @@ package com.mosh.getmedsoon;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
@@ -17,7 +15,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.GoogleAuthUtil;
-
 import com.mosh.getmedsoon.constant.getMedSoonCostants;
 
 public class SplashScreen extends Activity {
@@ -47,14 +44,7 @@ public class SplashScreen extends Activity {
 
      if (settings.getBoolean("my_first_time", true)) {
          //the app is being launched for first time, do something
-         new AlertDialog.Builder(this)
-                 .setMessage("Hi !! :)")
-                 .setPositiveButton(android.R.string.ok,
-                         new DialogInterface.OnClickListener() {
-                             public void onClick(DialogInterface dialog, int id) {
-                                 dialog.dismiss();
-                             }
-                         }).show();
+
          System.out.println("Enters perference before "+getMedSoonCostants.perferenceCheck);
         syncGoogleAccount();   //Google Account Synchronization
          System.out.println("Enters perference before "+getMedSoonCostants.perferenceCheck);

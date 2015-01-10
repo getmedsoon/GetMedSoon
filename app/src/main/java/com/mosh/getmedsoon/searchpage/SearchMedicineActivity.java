@@ -9,7 +9,7 @@ import com.mosh.getmedsoon.R;
 /**
  * Created by chinna on 1/26/14.
  */
-public class SearchMedicine extends Activity {
+public class SearchMedicineActivity extends Activity {
 
     // Splash screen timer
     // private static int SPLASH_TIME_OUT = 3000;

@@ -28,6 +28,7 @@
     <string name="dateOfBirthTextBoxHint">Date of Birth</string>
     <string name="myDetailsSaveName">SAVE</string>
     <string name="title_activity_search_results">SearchResultsActivity</string>
+    <string name="title_activity_search_Medicine">SearchMedicineActivity</string>
     <string name="hello_world">Hello world!</string>
 
 
