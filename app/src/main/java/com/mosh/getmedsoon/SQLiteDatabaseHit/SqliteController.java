@@ -52,7 +52,7 @@ public class SqliteController  extends SQLiteOpenHelper {
             values.put("DOB", DOB);
             database.insert("MemberDetails", null, values);
             database.close();
-            //getMedSoonCostants.perferenceCheck=true;
+            //getMedSoonConstants.perferenceCheck=true;
            settings.edit().putBoolean("my_first_time", false).apply();
     }
 

@@ -15,7 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.GoogleAuthUtil;
-import com.mosh.getmedsoon.constant.getMedSoonCostants;
+import com.mosh.getmedsoon.constants.getMedSoonConstants;
 
 public class SplashScreen extends Activity {
 
@@ -45,13 +45,13 @@ public class SplashScreen extends Activity {
      if (settings.getBoolean("my_first_time", true)) {
          //the app is being launched for first time, do something
 
-         System.out.println("Enters perference before "+getMedSoonCostants.perferenceCheck);
+         System.out.println("Enters perference before "+ getMedSoonConstants.perferenceCheck);
         syncGoogleAccount();   //Google Account Synchronization
-         System.out.println("Enters perference before "+getMedSoonCostants.perferenceCheck);
+         System.out.println("Enters perference before "+ getMedSoonConstants.perferenceCheck);
 
          System.out.println("Comments -1 time");
 
-       /* if(getMedSoonCostants.perferenceCheck){
+       /* if(getMedSoonConstants.perferenceCheck){
              System.out.println("Comments First time");
              settings.edit().putBoolean("my_first_time", false).commit();
          } */

@@ -1,20 +1,23 @@
 package com.mosh.getmedsoon.searchpage;
 
 import android.app.Activity;
-import android.content.res.Resources;
+import android.content.Context;
 import android.os.Bundle;
+import android.util.Pair;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.mosh.getmedsoon.R;
-import com.mosh.getmedsoon.TestBeans.GMSAddress;
-import com.mosh.getmedsoon.TestBeans.GMSShop;
 import com.mosh.getmedsoon.adapters.SearchShopResultsCustomAdapter;
+import com.mosh.getmedsoon.delegate.AsyncGMSShopDelegate;
 
 import java.util.ArrayList;
 
+import appenginemohitpackage.gmsShopEndpoint.model.GMSAddress;
+import appenginemohitpackage.gmsShopEndpoint.model.GMSShop;
+
 /**
- * Created by 915644 on 1/12/15.
+ * Created by Mohit on 1/12/15.
  */
 
 public class SearchShopActivity extends Activity {
@@ -22,7 +25,18 @@ public class SearchShopActivity extends Activity {
     ListView list;
     SearchShopResultsCustomAdapter adapter;
     public  SearchShopActivity CustomListView = null;
-    public  ArrayList<GMSShop> CustomListViewValuesArr = new ArrayList<GMSShop>();
+
+
+
+    public ArrayList<GMSShop> getSearchShopResultList() {
+        return searchShopResultList;
+    }
+
+    public void setSearchShopResultList(ArrayList<GMSShop> searchShopResultList) {
+        this.searchShopResultList = searchShopResultList;
+    }
+
+    private   ArrayList<GMSShop> searchShopResultList = new ArrayList<GMSShop>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,20 +47,16 @@ public class SearchShopActivity extends Activity {
 
         CustomListView = this;
 
+        new AsyncGMSShopDelegate(this).execute(new Pair<Context, String>(this, "TestGaneshBhagwanShop"));
+
         /******** Take some data in Arraylist ( CustomListViewValuesArr ) ***********/
-        setListData();
+      //  setListData();
 
-        Resources res =getResources();
-        list= ( ListView )findViewById( R.id.list );  // List defined in XML ( See Below )
-
-        /**************** Create Custom Adapter *********/
-        adapter=new SearchShopResultsCustomAdapter( CustomListView, CustomListViewValuesArr,res );
-        list.setAdapter( adapter );
 
     }
 
-    /****** Function to set data in ArrayList *************/
-    public void setListData()
+    /****** Function to set Dummy data in ArrayList *************/
+    public void setDummyListData()
     {
 
 
@@ -59,8 +69,8 @@ public class SearchShopActivity extends Activity {
             testAddress.setState("tamilnadu");
             testAddress.setArea("t.nagar");
             testAddress.setCity("Chennai");
-            testAddress.setGMSLatitude(Float.valueOf("22.00"));
-            testAddress.setGMSLongitude(Float.valueOf("55.00"));
+            testAddress.setGmslongitude(Float.valueOf("22.00"));
+            testAddress.setGmslatitude(Float.valueOf("55.00"));
             testAddress.setAddrText("5 Rock Lane");
             testAddress.setPincode(Integer.valueOf("600017"));
 
@@ -76,11 +86,9 @@ public class SearchShopActivity extends Activity {
             testShop3.setGmsaddress(testAddress);
 
             /******** Take Model Object in ArrayList **********/
-            CustomListViewValuesArr.add( testShop1 );
-            CustomListViewValuesArr.add( testShop2 );
-            CustomListViewValuesArr.add( testShop3 );
-
-
+            searchShopResultList.add( testShop1 );
+            searchShopResultList.add( testShop2 );
+            searchShopResultList.add( testShop3 );
 
     }
 
@@ -88,7 +96,7 @@ public class SearchShopActivity extends Activity {
     /*****************  This function used by adapter ****************/
     public void onItemClick(int mPosition)
     {
-        GMSShop tempShop = ( GMSShop ) CustomListViewValuesArr.get(mPosition);
+        GMSShop tempShop = ( GMSShop ) searchShopResultList.get(mPosition);
 
         // SHOW ALERT
         Toast.makeText(CustomListView, "Shop Name -" + tempShop.getShopName(),

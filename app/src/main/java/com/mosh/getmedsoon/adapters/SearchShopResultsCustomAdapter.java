@@ -15,10 +15,11 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.mosh.getmedsoon.R;
-import com.mosh.getmedsoon.TestBeans.GMSShop;
 import com.mosh.getmedsoon.searchpage.SearchShopActivity;
 
 import java.util.ArrayList;
+
+import appenginemohitpackage.gmsShopEndpoint.model.GMSShop;
 
 /********* Adapter class extends with BaseAdapter and implements with OnClickListener ************/
 public class SearchShopResultsCustomAdapter extends BaseAdapter implements View.OnClickListener {
