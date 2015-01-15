@@ -29,6 +29,8 @@
     <string name="myDetailsSaveName">SAVE</string>
     <string name="title_activity_search_results">SearchResultsActivity</string>
     <string name="title_activity_search_Medicine">SearchMedicineActivity</string>
+    <string name="title_activity_search_Shop">SearchShopActivity</string>
+    <string name="title_activity_test">title_activity_test</string>
     <string name="hello_world">Hello world!</string>
 
 

@@ -8,6 +8,7 @@
 
     <EditText
         android:layout_width="match_parent"
+        android:inputType="text"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
         android:text="Search Medicine" />

@@ -53,7 +53,7 @@ public class SqliteController  extends SQLiteOpenHelper {
             database.insert("MemberDetails", null, values);
             database.close();
             //getMedSoonCostants.perferenceCheck=true;
-           settings.edit().putBoolean("my_first_time", false).commit();
+           settings.edit().putBoolean("my_first_time", false).apply();
     }
 
    /* public int updateStudent(HashMap<String, String> queryValues) {

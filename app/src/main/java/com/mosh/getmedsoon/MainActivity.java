@@ -172,7 +172,7 @@ public class MainActivity extends ActionBarActivity
                 case 1:
                     rootView = inflater.inflate(R.layout.fragment_main_med, container, false);
                  //   testAppengine();
-//                    validate1(rootView);
+                  validate1(rootView);
 //                    TextView textView = (TextView) rootView.findViewById(R.id.section_label);
 //                    textView.setText("Epic"+Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
 
@@ -210,13 +210,13 @@ public class MainActivity extends ActionBarActivity
         private void validate1(View rootView) {
             pincode=(EditText)rootView.findViewById(R.id.textPincode);
             shopName=(EditText)rootView.findViewById(R.id.textShopName);
-            searchButton=(Button)rootView.findViewById(R.id.buttonSearch);
+            searchButton=(Button)rootView.findViewById(R.id.buttonSearchShop);
             searchButton.setEnabled(false);
             searchButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent myintent = new Intent();
-                    myintent.setClassName("com.mosh.getmedsoon","com.mosh.getmedsoon.SearchResultsActivity");
+                    myintent.setClassName("com.mosh.getmedsoon","com.mosh.getmedsoon.searchpage.SearchShopActivity");
                     startActivity(myintent);
                 }
             });
@@ -359,6 +359,7 @@ public class MainActivity extends ActionBarActivity
             });
 
         }
+
 
     }
 
