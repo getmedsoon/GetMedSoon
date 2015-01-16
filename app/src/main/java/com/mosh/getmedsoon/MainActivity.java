@@ -217,6 +217,7 @@ public class MainActivity extends ActionBarActivity
                 public void onClick(View view) {
                     Intent myintent = new Intent();
                     myintent.setClassName("com.mosh.getmedsoon","com.mosh.getmedsoon.searchpage.SearchShopActivity");
+                    myintent.putExtra("shopName",shopName.getText().toString());
                     startActivity(myintent);
                 }
             });

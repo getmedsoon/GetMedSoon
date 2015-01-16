@@ -3,6 +3,7 @@ package com.mosh.getmedsoon.searchpage;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -22,10 +23,11 @@ import appenginemohitpackage.gmsShopEndpoint.model.GMSShop;
 
 public class SearchShopActivity extends Activity {
 
+    static final String TAG = "AsyncGMSShopDelegate";
     ListView list;
     SearchShopResultsCustomAdapter adapter;
     public  SearchShopActivity CustomListView = null;
-
+    String shopName;
 
 
     public ArrayList<GMSShop> getSearchShopResultList() {
@@ -47,7 +49,12 @@ public class SearchShopActivity extends Activity {
 
         CustomListView = this;
 
-        new AsyncGMSShopDelegate(this).execute(new Pair<Context, String>(this, "TestGaneshBhagwanShop"));
+        shopName=getIntent().getStringExtra("shopName");
+        if(shopName!=null){
+            Log.i(TAG, "...........ShopName Passed through Intent.....");
+            new AsyncGMSShopDelegate(this).execute(new Pair<Context, String>(this,shopName));
+        }
+
 
         /******** Take some data in Arraylist ( CustomListViewValuesArr ) ***********/
       //  setListData();

@@ -70,21 +70,29 @@ public class AsyncGMSShopDelegate extends AsyncTask<Pair<Context, String>, Void,
         if(gmsShopEndpointService == null) {
 
             Log.v(TAG, "gmsShopEndpointService is null");
-         // Only do this once
+//         // Only do this once
+//            GmsShopEndpoint.Builder builder = new GmsShopEndpoint.Builder(AndroidHttp.newCompatibleTransport(),
+//                    new AndroidJsonFactory(), null).setApplicationName("GetMedSoon")
+//        // options for running against local devappserver
+//        // - 10.0.2.2 is localhost's IP address in Android emulator
+//        // - turn off compression when running against local devappserver
+//                    .setRootUrl(getMedSoonConstants.LOCAL_GMS_APPENGINE_ENDPOINTS)
+//                    .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
+//                        @Override
+//                        public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
+//                            abstractGoogleClientRequest.setDisableGZipContent(true);
+//                        }
+//                    });
+//// end options for devappserver
+
             GmsShopEndpoint.Builder builder = new GmsShopEndpoint.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null).setApplicationName("GetMedSoon")
-        // options for running against local devappserver
-        // - 10.0.2.2 is localhost's IP address in Android emulator
-        // - turn off compression when running against local devappserver
-                    .setRootUrl(getMedSoonConstants.LOCAL_GMS_APPENGINE_ENDPOINTS)
+                    .setRootUrl(getMedSoonConstants.CLOUD_API_APPENGINE_ENDPOINTS)
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
                         public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
-                            abstractGoogleClientRequest.setDisableGZipContent(true);
                         }
                     });
-// end options for devappserver
-
             gmsShopEndpointService = builder.build();
         }
 
